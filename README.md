@@ -5,6 +5,16 @@ This repo contains the implementation for Simple-TTS, a latent diffusion model f
 **Simple-TTS: End-to-End Text-to-Speech Synthesis with Latent Diffusion**\
 by Justin Lovelace, Soham Ray, Kwangyoun Kim, Kilian Q. Weinberger, and Felix Wu
 
+## Project Members
+	•	Reetika Bhanushali
+	•	Navneet Joshi
+	•	Siddi Kommuri
+
+## Guide
+	•	Prof. Akash Murthy
+
+# How to run
+
 ## Environment
 Install the required dependencies with:
 ```bash
@@ -13,9 +23,9 @@ pip install -r requirements.txt
 
 ## Datasets
 
-We train our models using the English subset of the Multilingual LibriSpeech (MLS) dataset and use the standard LibriSpeech dataset for evaluation.
+We train our models using the Italian subset of the Multilingual LibriSpeech (MLS) dataset and use the standard LibriSpeech dataset for evaluation.
 
-For the MLS dataset, download `mls_english.tar.gz` from [https://www.openslr.org/94/](https://www.openslr.org/94/). Store the unzipped dataset at `/persist/data/mls/mls_english/` or update the `data_dir` path in `audio_datasets/mls.py` accordingly. The MLS dataset can be processed by running the `audio_datasets/preprocess_mls.py` script.
+For the MLS dataset, download `mls_italian.tar.gz` from [https://www.openslr.org/94/](https://www.openslr.org/94/). Store the unzipped dataset at `/persist/data/mls/mls_italian/` or update the `data_dir` path in `audio_datasets/mls.py` accordingly. The MLS dataset can be processed by running the `audio_datasets/preprocess_mls.py` script.
 
 We access LibriSpeech through the Huggingface Hub. For speaker-prompted generation, we utilize the first three seconds of another prompt. To extract the corresponding transcript from the first three seconds, we utilized the [Montreal Forced Aligner](https://montreal-forced-aligner.readthedocs.io/en/latest/first_steps/example.html#example-1-aligning-librispeech-english). An aligned version of LibriSpeech can be found at
 
@@ -24,6 +34,7 @@ data/aligned_librispeech.tar.gz
 ```
 
 It should be untarred and you should update the update the `ALIGNED_DATA_DIR` path in `audio_datasets/librispeech.py` to point to the data directory. 
+ 
 
 ## Training
 
@@ -51,7 +62,7 @@ We provide a script for synthesizing speech for the Librispeech test-clean set:
 ```bash
 ./scripts/sample/sample_16_ls_testclean.sh
 ``` 
-The `--resume_dir` argument should be updated with the path of a trained model. 
+The `--resume_dir` argument should be updated with the path of a trained model. (in our case it is checkpoints/simple-tts-pretrained folder)
 
 ## Contact
 Feel free to create an issue if have any questions. 
