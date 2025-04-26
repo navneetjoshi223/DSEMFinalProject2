@@ -1,4 +1,4 @@
-# Simple-TTS
+# Paper 2 - Simple-TTS
 
 This repo contains the implementation for Simple-TTS, a latent diffusion model for text-to-speech generation. Our submission describing this work is currently under review:
 
