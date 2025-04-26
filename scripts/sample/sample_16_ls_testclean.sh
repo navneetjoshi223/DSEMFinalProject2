@@ -1,0 +1,1 @@
+python train_audio_diffusion.py --eval_test --batch_size 1 --resume_dir checkpoints/simple-tts-pretrained --sampling_timesteps 250 --run_name sample16 --sampler ddpm --seed 42 --num_samples 16 --scale 0.5 --guidance 2.0,3.0,5.0
